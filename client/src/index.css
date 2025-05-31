@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 210 11% 98%; /* #F5F7FA */
+  --foreground: 240 10% 3.9%;
+  --muted: 210 14% 93%; /* #EAEEF3 */
+  --muted-foreground: 215 13% 50%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --primary: 207 90% 54%; /* #2563eb - Blue */
+  --primary-foreground: 211 100% 99%;
+  --secondary: 210 14% 93%;
+  --secondary-foreground: 240 10% 15%;
+  --accent: 151 55% 41.5%; /* #059669 - Green */
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 207 90% 54%;
+  --radius: 0.5rem;
+  
+  /* Custom JobConnect colors */
+  --jobconnect-blue: 207 90% 54%;
+  --jobconnect-blue-dark: 214 100% 46%;
+  --jobconnect-green: 151 55% 41.5%;
+  --jobconnect-orange: 36 100% 66%;
+  --jobconnect-gray: 215 16% 47%;
+  --jobconnect-gray-light: 210 14% 93%;
+  --jobconnect-slate: 215 20% 65%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 151 55% 41.5%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+  
+  .job-card {
+    @apply bg-white rounded-lg shadow-sm border border-slate-200 p-6 hover:shadow-md transition-shadow;
+  }
+  
+  .search-input {
+    @apply w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-slate-900 dark:text-slate-100 bg-white dark:bg-slate-800;
+  }
+}
+
+@layer utilities {
+  .text-jobconnect-blue {
+    color: hsl(var(--jobconnect-blue));
+  }
+  
+  .bg-jobconnect-blue {
+    background-color: hsl(var(--jobconnect-blue));
+  }
+  
+  .text-jobconnect-green {
+    color: hsl(var(--jobconnect-green));
+  }
+  
+  .bg-jobconnect-green {
+    background-color: hsl(var(--jobconnect-green));
+  }
+}
